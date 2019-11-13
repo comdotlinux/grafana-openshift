@@ -7,7 +7,7 @@ EXPOSE 3000
 ENV GRAFANA_VERSION="6.4.4"
 
 ADD root /
-RUN yum -y install https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-"$GRAFANA_VERSION"-1.x86_64.rpm \
+RUN yum -y install https://dl.grafana.com/oss/release/grafana-"$GRAFANA_VERSION"-1.x86_64.rpm \
     && yum clean all
 COPY run.sh /usr/share/grafana/
 RUN /usr/bin/fix-permissions /usr/share/grafana \
